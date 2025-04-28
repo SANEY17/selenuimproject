@@ -14,13 +14,17 @@ public class RegisterTest extends BaseClass {
 			register.setFirstName();
 			Thread.sleep(2000);
 			register.setLastName();
-			register.chooseMaleOption();
 			Thread.sleep(2000);
-			register.getEmail();
-			Thread.sleep(3000);
-			register.getVerificationNumber();
-			Thread.sleep(3000);
-			register.submitBtn();
+			register.setEmail();
+			Thread.sleep(2000);
+			register.setContact();
+			Thread.sleep(2000);
+			register.setCompany();
+			Thread.sleep(2000);
+			register.getMessage();
+			Thread.sleep(2000);
+			register.Enquiry();
+			Thread.sleep(2000);
 		}
 	 
 	}

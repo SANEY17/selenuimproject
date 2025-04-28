@@ -19,24 +19,29 @@ public class RegisterPage extends BaseClass{
 	Properties prop;
 	FileInputStream credentials;
 	
-	@FindBy(xpath="//input[@name='vfb-5']")
+	@FindBy(xpath="//input[@name='firstName']")
 	WebElement firstNameElement;
 	
-	@FindBy(xpath="//input[@name='vfb-7']")
+	@FindBy(xpath="//input[@name='lastName']")
 	WebElement lastNameElement;
 	
-	@FindBy(xpath="//input[@value='Male']")
-	WebElement radioBtnMale;
-	
-	@FindBy(xpath="//input[contains(@name,'vfb-14')]")
+	@FindBy(xpath="//input[@name='emailAddress']")
 	WebElement emailElement;
 	
-	@FindBy(xpath="//input[contains(@class,'vfb-text vfb-medium required {digits:true,maxlength:2,minlength:2} vfb-error')]")
-	WebElement verificationElement;
+	@FindBy(xpath="//input[@id='contact']")
+	WebElement contactElement;
 	
-	@FindBy(xpath="//input[contains(@class,'vfb-submit')]")
-	WebElement submitElement;
- 
+	@FindBy(xpath="//input[contains(@id,'company-name')]")
+	WebElement companyElement;
+	
+	@FindBy(xpath="//input[@name='text']")
+	WebElement messageElement;
+	
+	@FindBy(xpath="//button[.='Send Us An Inquiry']")
+	WebElement enquiryElement;
+	
+	
+	
 	public RegisterPage(WebDriver driver) {
 		
 		PageFactory.initElements(driver, this);
@@ -62,9 +67,29 @@ public class RegisterPage extends BaseClass{
 	}
 	
 	public void setLastName() {
-		
 		lastNameElement.sendKeys(getLastName());
 	}
+	
+	public void setEmail() {
+		
+		emailElement.sendKeys(getEmail());
+	}
+	
+	public void setCompany() {
+		
+		companyElement.sendKeys(getCompany());
+	}
+	
+	public void setContact() {
+		
+		contactElement.sendKeys(getContact());
+	}
+	
+	public void setMessage() {
+		messageElement.sendKeys(getMessage());
+	}
+	
+	
 	
 	public String getFirstName() {
 		
@@ -73,8 +98,6 @@ public class RegisterPage extends BaseClass{
 		return firstName;
 	}
 	
-	
-	
 	public String getLastName() {
 		
 		loadSecretInformation();
@@ -82,26 +105,48 @@ public class RegisterPage extends BaseClass{
 		return lastName;
 	}
 	
-	public void chooseMaleOption() {
-		
-		radioBtnMale.click();
-	}
-	
+
 	public String getEmail() {
+		
 		loadSecretInformation();
-		String email=prop.getProperty("r_email");
+		String email = prop.getProperty("email");
 		return email;
 	}
 	
-	public String getVerificationNumber() {
+	
+	public String getContact() {
+		
 		loadSecretInformation();
-		String verificationNum=prop.getProperty("verificationNum");
-		return verificationNum;
+		String contact = prop.getProperty("contact");
+		return contact;
 	}
 	
-	public void submitBtn() {
-		submitElement.click();
+	public String getCompany() {
+		
+		loadSecretInformation();
+		String company = prop.getProperty("company");
+		return company;
 	}
+	
+	public String getMessage() {
+		
+		loadSecretInformation();
+		String message = prop.getProperty("message");
+		return message;
+	}
+	
+	public void Enquiry() {
+		
+		enquiryElement.click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

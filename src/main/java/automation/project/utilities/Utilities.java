@@ -10,7 +10,7 @@ public class Utilities {
 	public static Properties prop;
 	public static FileInputStream input;
 	public static String globalFilePath = "./src/main/java/configs/config.properties";
-	public static final int IMPLICIT_WAIT_TIME = 10;
+	public static final int IMPLICIT_WAIT_TIME = 100;
 	
 	
 	public static void initGlobalConfiguration() {
